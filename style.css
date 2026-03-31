@@ -139,6 +139,11 @@ body {
     color: white;
 }
 
+.lang-ko {
+    word-break: keep-all;
+    overflow-wrap: normal;
+}
+
 html .lang-ko {
     display: none;
 }
