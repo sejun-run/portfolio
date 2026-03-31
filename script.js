@@ -1,5 +1,11 @@
 document.addEventListener('DOMContentLoaded', () => {
-    lucide.createIcons();
+    function renderIcons() {
+        if (window.lucide && typeof window.lucide.createIcons === 'function') {
+            window.lucide.createIcons();
+        }
+    }
+
+    renderIcons();
 
     const currentYearElement = document.getElementById('currentYear');
     if (currentYearElement) {
@@ -37,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
         mobileMenuButton.addEventListener('click', () => {
             const isHidden = mobileMenu.classList.toggle('hidden');
             mobileMenuButton.innerHTML = isHidden ? '<i data-lucide="menu"></i>' : '<i data-lucide="x"></i>';
-            lucide.createIcons();
+            renderIcons();
         });
     }
 
@@ -100,7 +106,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
                 mobileMenu.classList.add('hidden');
                 mobileMenuButton.innerHTML = '<i data-lucide="menu"></i>';
-                lucide.createIcons();
+                renderIcons();
             }
         });
     });

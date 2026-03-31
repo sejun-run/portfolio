@@ -118,8 +118,20 @@ body {
     color: white;
 }
 
+html .lang-ko {
+    display: none;
+}
+
+html .lang-en {
+    display: inline;
+}
+
 html[lang="en"] .lang-ko {
     display: none;
+}
+
+html[lang="ko"] .lang-ko {
+    display: inline;
 }
 
 html[lang="ko"] .lang-en {
