@@ -1,31 +1,152 @@
-body {
-    scroll-behavior: smooth; /* This can also be handled by JS for wider compatibility */
+html {
+    scroll-behavior: smooth;
 }
 
-/* Custom scrollbar - optional subtle enhancement */
+body {
+    background:
+        radial-gradient(circle at top left, rgba(14, 165, 233, 0.08), transparent 30%),
+        radial-gradient(circle at 85% 15%, rgba(249, 115, 22, 0.08), transparent 24%),
+        #f8fafc;
+}
+
+.grain {
+    opacity: 0.22;
+    background-image:
+        linear-gradient(rgba(15, 23, 42, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(15, 23, 42, 0.03) 1px, transparent 1px);
+    background-size: 28px 28px;
+    mask-image: radial-gradient(circle at center, black, transparent 80%);
+}
+
+.hero-bg {
+    background:
+        radial-gradient(circle at 20% 20%, rgba(14, 165, 233, 0.14), transparent 28%),
+        radial-gradient(circle at 82% 30%, rgba(249, 115, 22, 0.12), transparent 24%),
+        linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(248, 250, 252, 0.6));
+}
+
+.section-kicker {
+    margin-bottom: 1rem;
+    color: #0ea5e9;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+}
+
+.section-kicker-dark {
+    color: #7dd3fc;
+}
+
+.section-title {
+    max-width: 52rem;
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    line-height: 1;
+    font-weight: 700;
+    letter-spacing: -0.04em;
+    color: #0f172a;
+}
+
+.tag {
+    border: 1px solid #cbd5e1;
+    border-radius: 9999px;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 0.5rem 0.8rem;
+}
+
+.timeline-card {
+    display: grid;
+    gap: 1.25rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 1.75rem;
+    background: rgba(255, 255, 255, 0.88);
+    padding: 1.75rem;
+    box-shadow: 0 20px 60px rgba(15, 23, 42, 0.06);
+}
+
+.timeline-meta {
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #0ea5e9;
+}
+
+.timeline-title {
+    font-size: 1.35rem;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    color: #0f172a;
+}
+
+.timeline-copy {
+    margin-top: 0.75rem;
+    max-width: 50rem;
+    color: #475569;
+    line-height: 1.9;
+}
+
+.contact-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.8rem;
+    border-radius: 9999px;
+    border: 1px solid #e2e8f0;
+    background: white;
+    padding: 0.9rem 1.1rem;
+    color: #0f172a;
+    transition: transform 180ms ease, border-color 180ms ease, color 180ms ease;
+}
+
+.contact-link:hover {
+    transform: translateY(-2px);
+    border-color: #7dd3fc;
+    color: #0369a1;
+}
+
+.lang-toggle {
+    position: relative;
+}
+
+.lang-btn {
+    color: #475569;
+    transition: background-color 180ms ease, color 180ms ease;
+}
+
+.lang-btn.active {
+    background: #0f172a;
+    color: white;
+}
+
+html[lang="en"] .lang-ko {
+    display: none;
+}
+
+html[lang="ko"] .lang-en {
+    display: none;
+}
+
 ::-webkit-scrollbar {
-    width: 8px;
-    height: 8px;
+    width: 9px;
+    height: 9px;
 }
 
 ::-webkit-scrollbar-track {
-    background: #F5F5F5; /* brand-bg */
+    background: #f8fafc;
 }
 
 ::-webkit-scrollbar-thumb {
-    background: #00A8B5; /* kaist-cyan */
-    border-radius: 4px;
+    background: #94a3b8;
+    border-radius: 9999px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: #007c86; /* darker cyan */
+    background: #64748b;
 }
 
-/* Ensure content below fixed navbar is not hidden */
-/* This might not be needed if sections have enough top padding or a different navbar strategy is used.
-   For now, sections use py-20 (padding top and bottom) which should provide enough space.
-   If a section is directly under the navbar, this would be useful.
-   body {
-      padding-top: 70px; /* Adjust based on actual navbar height 
-   }
-*/
+@media (min-width: 768px) {
+    .timeline-card {
+        grid-template-columns: 140px minmax(0, 1fr);
+        align-items: start;
+    }
+}
