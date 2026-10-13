@@ -255,8 +255,8 @@
                             </span>
                         </div>
                         <p class="mt-6 text-base leading-7 text-slate">
-                            <span class="lang-en">Started from a real friction point: journaling is too much effort at the end of the day. The answer was a Telegram-based LLM system that turns a casual bedtime conversation into a structured daily log, lowering the barrier to consistent self-recording. Built on a repurposed tablet, connecting Telegram Bot API with Gemini for multi-turn conversation and data structuring. Spent real time working through Linux package conflicts, memory limits, and RAG instability, which reinforced that sustainable infrastructure choices matter more than flashy demos.</span>
-                            <span class="lang-ko">일기 쓰기가 귀찮다는 실제 불편에서 출발했습니다. 잠들기 전 텔레그램 대화만으로 하루를 자연스럽게 기록할 수 있도록, 기록의 진입 장벽을 낮춘 텔레그램 기반 LLM 시스템을 설계했습니다. 재활용 태블릿에서 Telegram Bot API와 Gemini를 연동해 대화 맥락을 유지하는 파이프라인을 직접 구축했고, 리눅스 패키지 충돌과 메모리 제약, RAG 불안정성을 하나씩 해결하며 화려한 데모보다 지속 가능한 인프라 선택이 중요하다는 것을 다시 확인했습니다.</span>
+                            <span class="lang-en">Started from a real friction point: journaling is too much effort at the end of the day. The answer was a Telegram-based LLM system that turns a casual bedtime conversation into a structured daily log. Built on a repurposed tablet, connecting Telegram Bot API with Gemini, then moved to the cloud once it was clear the device could not stay online. Running it for months showed the real failure was friction, not infrastructure: a nightly push with an open-ended question reads like homework. So the project became a local-first LLM wiki — the bot retired, and the records it produced now live as a compiled knowledge base I keep writing into.</span>
+                            <span class="lang-ko">일기 쓰기가 귀찮다는 실제 불편에서 출발했습니다. 잠들기 전 텔레그램 대화만으로 하루를 기록할 수 있도록 텔레그램 기반 LLM 시스템을 설계했고, 재활용 태블릿에서 Telegram Bot API와 Gemini를 연동해 운영하다가 상시 가동이 불가능한 환경임을 확인한 뒤 클라우드로 옮겼습니다. 몇 달 운영해 보니 진짜 문제는 인프라가 아니라 마찰이었습니다. 밤 11시 알림과 열린 질문은 결국 숙제처럼 느껴졌습니다. 그래서 봇은 내리고, 쌓인 기록을 로컬 LLM 위키로 옮겨 지금도 이어 쓰고 있습니다.</span>
                         </p>
                         <div class="mt-6 flex flex-wrap gap-2 text-xs font-medium text-slate">
                             <span class="tag">Linux</span>
@@ -277,14 +277,14 @@
                             </span>
                         </div>
                         <p class="mt-6 text-base leading-7 text-slate">
-                            <span class="lang-en">Built an Android app that parses reservation screenshots with OCR and an LLM, then creates calendar events. It started from my own frustration with repetitive scheduling and became a product experiment in building something distributable within real cost constraints. I tested multiple open-source Hugging Face models myself, chose one by weighing the trade-off between quality and model size, and designed the app so users could bring their own Hugging Face key and run the flow on that selected model.</span>
-                            <span class="lang-ko">OCR과 LLM을 활용해 예약 화면 캡처를 해석하고 캘린더 일정으로 등록해 주는 앱을 만들었습니다. 개인적인 불편에서 출발했지만, 실제 비용 제약 안에서 배포 가능한 제품을 만드는 실험이 됐습니다. 여러 Hugging Face 오픈소스 모델을 직접 테스트해 성능과 모델 크기 사이의 트레이드오프를 비교했고, 그 판단을 바탕으로 적절한 모델을 선택했습니다. 또 사용자가 자신의 Hugging Face 키를 가져오면 그 모델로 처리할 수 있도록 BYOK 구조를 설계해 제품화 가능성을 높였습니다.</span>
+                            <span class="lang-en">Built an Android app that parses reservation screenshots with OCR and an LLM, then creates calendar events. It started from my own frustration with repetitive scheduling and became a product experiment in building something distributable within real cost constraints. I first shipped it as BYOK, asking users to bring their own key, but issuing a key turned out to be the biggest barrier to entry. So I moved the inference layer to a choice of Hugging Face Inference API, Gemini, or a quantized Qwen model running on-device, so the app works with nothing to set up.</span>
+                            <span class="lang-ko">OCR과 LLM을 활용해 예약 화면 캡처를 해석하고 캘린더 일정으로 등록해 주는 앱을 만들었습니다. 개인적인 불편에서 출발했지만, 실제 비용 제약 안에서 배포 가능한 제품을 만드는 실험이 됐습니다. 처음에는 사용자가 자신의 키를 넣는 BYOK 구조로 배포했지만, 키 발급 자체가 가장 큰 진입 장벽이라는 것을 확인했습니다. 그래서 추론 계층을 Hugging Face Inference API, Gemini, 그리고 온디바이스에서 도는 Qwen 양자화 모델 중 선택하는 구조로 바꿔, 아무 준비 없이도 바로 쓸 수 있게 만들었습니다.</span>
                         </p>
                         <div class="mt-6 flex flex-wrap gap-2 text-xs font-medium text-slate">
                             <span class="tag">Android</span>
                             <span class="tag">OCR</span>
                             <span class="tag">Calendar</span>
-                            <span class="tag">BYOK</span>
+                            <span class="tag">On-device LLM</span>
                         </div>
                         <a href="https://snappycal.sejun.run/" target="_blank" rel="noopener noreferrer" class="project-link">
                             <span class="lang-en">Visit SnappyCal</span>
@@ -307,27 +307,27 @@
             <div class="space-y-6">
                 <article class="timeline-card">
                     <div class="timeline-meta">
+                        <span class="lang-en">Jul 2026 - Present</span>
+                        <span class="lang-ko">2026년 7월 - 현재</span>
+                    </div>
+                    <div>
+                        <h3 class="timeline-title">AI FDE (Forward Deployed Engineer), KRAFTON</h3>
+                        <p class="timeline-copy">
+                            <span class="lang-en">Building MCP servers so internal AI agents can work with company SaaS data, connecting SOAP, RaaS, and REST endpoints to what teams actually ask for. Designed per-user OAuth instead of a shared service account so permission boundaries hold, added audit logging and rate limits against bulk retrieval, and built the pipeline that loads and refreshes the connected data in Databricks.</span>
+                            <span class="lang-ko">사내 AI Agent가 회사 SaaS 데이터를 활용할 수 있도록 MCP 서버를 개발하고 있습니다. SOAP·RaaS·REST 등 형태가 다른 API를 현업이 실제로 묻는 질문에 맞춰 연결했고, 공용 서비스 계정 대신 사용자별 OAuth로 설계해 권한 경계를 유지했습니다. 에이전트를 통한 대량 조회를 막기 위해 조회 감사 로그와 레이트 리밋을 넣었고, 연동한 데이터를 Databricks에 적재·갱신하는 파이프라인을 구축했습니다.</span>
+                        </p>
+                    </div>
+                </article>
+                <article class="timeline-card">
+                    <div class="timeline-meta">
                         <span class="lang-en">Sep 2025 - Feb 2026</span>
                         <span class="lang-ko">2025년 9월 - 2026년 2월</span>
                     </div>
                     <div>
                         <h3 class="timeline-title">Data Engineering Intern, Bagelcode</h3>
                         <p class="timeline-copy">
-                            <span class="lang-en">Built and operated data pipelines for production services across ETL workflows and AWS infrastructure. Optimized Delta Lake vacuum processes to cut S3 storage costs by 20%, and worked on upgrading the production platform to Airflow 3.0.</span>
-                            <span class="lang-ko">ETL 워크플로와 AWS 인프라 전반에 걸쳐 프로덕션 데이터 파이프라인을 구축·운영했습니다. Delta Lake 버큠 최적화로 S3 스토리지 비용을 20% 줄였고, 프로덕션 데이터 플랫폼의 Airflow 3.0 업그레이드에도 참여했습니다.</span>
-                        </p>
-                    </div>
-                </article>
-                <article class="timeline-card">
-                    <div class="timeline-meta">
-                        <span class="lang-en">Feb 2026 - Mar 2026</span>
-                        <span class="lang-ko">2026년 2월 - 2026년 3월</span>
-                    </div>
-                    <div>
-                        <h3 class="timeline-title">Freelance Workflow Automation Builder, Kickback AX Consulting Project</h3>
-                        <p class="timeline-copy">
-                            <span class="lang-en">Ran a freelance workflow automation project for a U.S. startup without in-house developers. I turned ambiguous customer operations into a maintainable system, balancing shifting business logic, platform limits, and the practical needs of a non-engineering client team.</span>
-                            <span class="lang-ko">전담 개발자가 없는 미국 스타트업을 상대로 프리랜스 워크플로 자동화 프로젝트를 진행했습니다. 모호한 고객 운영 프로세스를 유지 가능한 시스템으로 전환하면서, 계속 바뀌는 비즈니스 로직과 플랫폼의 한계, 비개발 고객 팀의 실제 사용성을 함께 고려해 설계했습니다.</span>
+                            <span class="lang-en">Built and operated data pipelines for production services across ETL workflows and AWS infrastructure. Found Delta Lake tables where vacuum had never been running, made cleanup run dynamically, and allocated compute per table so the process stays sustainable. Also worked on upgrading the production platform to Airflow 3.0.</span>
+                            <span class="lang-ko">ETL 워크플로와 AWS 인프라 전반에 걸쳐 프로덕션 데이터 파이프라인을 구축·운영했습니다. vacuum이 수행되지 않던 Delta Lake 테이블을 찾아 동적으로 정리되도록 조정하고, 범위가 큰 테이블은 테이블 수 단위로 컴퓨트를 배분해 지속 가능한 정리 체계를 만들었습니다. 프로덕션 데이터 플랫폼의 Airflow 3.0 업그레이드에도 참여했습니다.</span>
                         </p>
                     </div>
                 </article>
