@@ -313,8 +313,8 @@
                     <div>
                         <h3 class="timeline-title">AI FDE (Forward Deployed Engineer), KRAFTON</h3>
                         <p class="timeline-copy">
-                            <span class="lang-en">Building MCP servers so internal AI agents can work with company SaaS data, connecting SOAP, RaaS, and REST endpoints to what teams actually ask for. Designed per-user OAuth instead of a shared service account so permission boundaries hold, added audit logging and rate limits against bulk retrieval, and built the pipeline that loads and refreshes the connected data in Databricks.</span>
-                            <span class="lang-ko">사내 AI Agent가 회사 SaaS 데이터를 활용할 수 있도록 MCP 서버를 개발하고 있습니다. SOAP·RaaS·REST 등 형태가 다른 API를 현업이 실제로 묻는 질문에 맞춰 연결했고, 공용 서비스 계정 대신 사용자별 OAuth로 설계해 권한 경계를 유지했습니다. 에이전트를 통한 대량 조회를 막기 위해 조회 감사 로그와 레이트 리밋을 넣었고, 연동한 데이터를 Databricks에 적재·갱신하는 파이프라인을 구축했습니다.</span>
+                            <span class="lang-en">Building MCP servers so internal AI agents can work with company SaaS data, connecting SOAP, RaaS, REST, and WQL endpoints to what teams actually ask for. Separated the two access paths: designing an internal permission model before loading data into Databricks via service accounts, while enforcing per-user OAuth on real-time MCP lookups so source permission boundaries hold, alongside audit logging and rate limits against bulk retrieval.</span>
+                            <span class="lang-ko">사내 AI Agent가 회사 SaaS 데이터를 활용할 수 있도록 MCP 서버를 개발하고 있습니다. SOAP·RaaS·REST·WQL 등 형태가 다른 API를 현업이 실제로 묻는 질문에 맞춰 연결했습니다. 적재는 서비스 계정으로 수행하되 사내 앱 제공 시의 권한 보장을 적재 전에 설계하고 있으며, 외부 SaaS 실시간 조회 경로에는 사용자별 OAuth를 적용해 원본 권한 경계를 그대로 유지했습니다. 에이전트를 통한 대량 조회를 막기 위해 조회 감사 로그와 레이트 리밋을 함께 넣었습니다.</span>
                         </p>
                     </div>
                 </article>
@@ -449,7 +449,7 @@
                             </p>
                         </div>
                         <div class="mt-6 grid gap-4">
-                            <a href="mailto:contact@sejun.run" class="contact-link"><i data-lucide="mail" class="h-5 w-5"></i><span>contact@sejun.run</span></a>
+                            <a href="mailto:sejun.run@gmail.com" class="contact-link"><i data-lucide="mail" class="h-5 w-5"></i><span>sejun.run@gmail.com</span></a>
                             <a href="https://sejun.run" target="_blank" rel="noopener noreferrer" class="contact-link"><i data-lucide="globe" class="h-5 w-5"></i><span>sejun.run</span></a>
                             <a href="https://github.com/sejun-run" target="_blank" rel="noopener noreferrer" class="contact-link">
                                 <svg viewBox="0 0 24 24" aria-hidden="true" class="contact-icon fill-current">
